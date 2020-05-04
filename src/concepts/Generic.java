@@ -11,6 +11,11 @@ public class Generic<T>{
         System.out.println(this.obj);
     }
 
+    //Generic method example
+    public <E> void displayGeneric(E element) {
+        System.out.println(element);
+    }
+
     public T getObj() {
         return obj;
     }

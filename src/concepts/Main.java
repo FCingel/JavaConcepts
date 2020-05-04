@@ -31,11 +31,15 @@ public class Main {
     }
 
     public static void runGeneric() {
+        //Generic classes
         Generic<Integer> genericInt = new Generic<>(42);
         Generic<String> genericStr = new Generic<>("Hello");
 
         genericInt.display();
         genericStr.display();
-    }
 
+        //Generic method
+        genericInt.displayGeneric(20);
+        genericInt.displayGeneric("Frank");
+    }
 }
