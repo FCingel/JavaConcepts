@@ -1,5 +1,6 @@
 package concepts;
 
+//Generic class
 public class Generic<T>{
     private T obj;
 
@@ -12,7 +13,7 @@ public class Generic<T>{
     }
 
     //Generic method example
-    public <E> void displayGeneric(E element) {
+    public static <E> void displayGeneric(E element) {
         System.out.println(element);
     }
 

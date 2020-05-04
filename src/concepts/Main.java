@@ -10,7 +10,7 @@ public class Main {
         String concept = new String();
 
         while(!concept.equals("Quit")) {
-            System.out.print("Enter the name of the concept you would like to run or type quit:");
+            System.out.print("\nEnter the name of the concept you would like to run or type quit:");
             concept = input.next();
             //Capitalize first character in case user hasn't
             concept = concept.substring(0, 1).toUpperCase() + concept.substring(1);
@@ -31,7 +31,7 @@ public class Main {
     }
 
     public static void runGeneric() {
-        //Generic classes
+        //Generic class
         Generic<Integer> genericInt = new Generic<>(42);
         Generic<String> genericStr = new Generic<>("Hello");
 
@@ -39,7 +39,7 @@ public class Main {
         genericStr.display();
 
         //Generic method
-        genericInt.displayGeneric(20);
-        genericInt.displayGeneric("Frank");
+        Generic.displayGeneric(20);
+        Generic.displayGeneric("Frank");
     }
 }
