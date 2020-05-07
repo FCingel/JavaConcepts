@@ -2,6 +2,7 @@
 *.log
 
 .idea/
+out/
 *.iml
 
 *.jar
