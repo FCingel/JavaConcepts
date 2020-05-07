@@ -42,4 +42,48 @@ public class Main {
         Generic.displayGeneric(20);
         Generic.displayGeneric("Frank");
     }
+
+    public static void runWildcard() {
+
+    }
+
+    public static void runThread() throws InterruptedException {
+        ThreadExample threadExample = new ThreadExample();
+        System.out.println("Thread start");
+        threadExample.start();
+
+        System.out.println("isAlive method while thread is running: " + threadExample.isAlive());
+
+        System.out.println("State: " + threadExample.getState());
+        System.out.println("Name: " + threadExample.getName());
+        System.out.println("Priority: " + threadExample.getPriority());
+
+        //join() method waits for the thread to die
+        threadExample.join();
+        System.out.println("isAlive method after thread is finished: " + threadExample.isAlive());
+
+        Thread.sleep(2000);
+        System.out.println("Thread end");
+
+    }
+
+    public static void runRunnable() throws InterruptedException {
+        RunnableExample runnableExample = new RunnableExample();
+        Thread threadObject = new Thread(runnableExample);
+        System.out.println("Thread start");
+        threadObject.start();
+
+        System.out.println("isAlive method while thread is running: " + threadObject.isAlive());
+
+        System.out.println("State: " + threadObject.getState());
+        System.out.println("Name: " + threadObject.getName());
+        System.out.println("Priority: " + threadObject.getPriority());
+
+        //join() method waits for the thread to die
+        threadObject.join();
+        System.out.println("isAlive method after thread is finished: " + threadObject.isAlive());
+
+        Thread.sleep(2000);
+        System.out.println("Thread end");
+    }
 }

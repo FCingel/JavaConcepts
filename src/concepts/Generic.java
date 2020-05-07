@@ -12,7 +12,7 @@ public class Generic<T>{
         System.out.println(this.obj);
     }
 
-    //Generic method example
+    //Generic method
     public static <E> void displayGeneric(E element) {
         System.out.println(element);
     }
