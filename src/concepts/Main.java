@@ -3,6 +3,9 @@ package concepts;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Scanner;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 public class Main {
     public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
@@ -85,5 +88,22 @@ public class Main {
 
         Thread.sleep(2000);
         System.out.println("Thread end");
+    }
+
+    public static void runCallable() {
+        ExecutorService exService = Executors.newSingleThreadExecutor();
+        CallableExample uploadCallable = new CallableExample("Batch 1");
+        Future<Boolean> future = exService.submit(uploadCallable);
+        try {
+            System.out.println("Upload completed: " + future.get());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        exService.shutdown();
+    }
+
+    public static void runLambda() {
+        LambdaExample le = (num1, num2) -> num1 + num2;
+        System.out.println(le.add(5, 7));
     }
 }
